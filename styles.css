@@ -704,3 +704,21 @@ a:focus {
         background: rgba(26, 84, 144, 0.05);
     }
 }
+/* === TAB FUNCTIONALITY (REQUIRED) === */
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-btn {
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary-color);
+}
