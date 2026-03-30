@@ -393,4 +393,13 @@
     contents.forEach(content => content.classList.remove('active'));
 
     const buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(b => b.classList.remove('activ
+    buttons.forEach(b => b.classList.remove('active'));
+
+    document.getElementById(tabName).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
