@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="light dark">
+    <meta name="color-scheme" content="light">
     
     <title>Temporal Rate Ontology (TRO) - Georgios Kouvidis</title>
     
@@ -50,20 +50,35 @@
 
     <nav role="navigation" aria-label="Primary navigation">
         <div class="container">
-            <a href="#overview">Overview</a>
-            <a href="#commitments">Commitments</a>
-            <a href="#explanatory-priority">Priority</a>
+            <a href="#schematic">Schematic</a>
+            <a href="#framework">Framework</a>
             <a href="#why-tro">Why TRO?</a>
             <a href="#program">Program</a>
             <a href="#papers">Papers</a>
-            <a href="#faq">FAQ</a>
-            <a href="#resources">Resources</a>
-            <a href="#contact">Contact</a>
+            <a href="#faq">FAQ &amp; Contact</a>
         </div>
     </nav>
 
     <main class="container">
-        <section id="overview">
+        <section id="schematic" class="schematic-section">
+            <h2>How TRO Works</h2>
+
+            <div class="summary-box">
+                <p class="lead">Most physical theories treat spacetime geometry as the ground floor of reality. Temporal Rate Ontology proposes a different starting point: <strong>ordered temporal succession is primitive, and geometry is representational</strong> — a highly effective encoding of how events can continue, not a constituent of reality in its own right.</p>
+                <p>This shift in explanatory priority has consequences for how we understand gravity, quantum probability, and the problem of time. The schematic below traces the argument from first principles.</p>
+            </div>
+
+            <div class="schematic-frame">
+                <iframe
+                    src="schematic.html?embed=1&autoplay=1"
+                    title="Temporal Rate Ontology explanatory schematic"
+                    allowfullscreen></iframe>
+            </div>
+
+            <p class="schematic-note"><a href="schematic.html">View full-screen schematic</a></p>
+        </section>
+
+        <section id="framework">
             <h2>What is Temporal Rate Ontology?</h2>
             
             <div class="summary-box">
@@ -317,7 +332,7 @@
         </section>
 
         <section id="faq">
-            <h2>Frequently Asked Questions</h2>
+            <h2>FAQ &amp; Contact</h2>
             
             <div class="faq-list">
                 <div class="faq-item">
@@ -350,43 +365,13 @@
                     <p>No. TRO does not yet claim a complete derivation of the Born rule or a full solution to the measurement problem. It explores structural conditions under which probabilistic weighting and aggregation-stable forms may arise.</p>
                 </div>
             </div>
-        </section>
 
-        <section id="resources">
-            <h2>Resources &amp; Keywords</h2>
-            
-            <div class="resources-grid">
-                <div class="resource-box">
-                    <h4>Keywords</h4>
-                    <p class="keywords">temporal ontology · succession · foundations of physics · geometry as representation · quantum gravity · problem of time · continuation multiplicity · maximal freedom · structural complexity · falsifiability</p>
-                </div>
-                
-                <div class="resource-box">
-                    <h4>Suggested Citation</h4>
-                    <p class="citation">Kouvidis, G. (2026). Temporal Rate Ontology (project site). Retrieved from https://georgioskouvidis.github.io/temporal-rate-ontology/</p>
-                </div>
-            </div>
-
-            <div class="related-reading">
-                <h4>Related Reading</h4>
-                <ul>
-                    <li>Maudlin, T. (2012). <em>Philosophy of Physics: Space and Time</em>. Princeton University Press.</li>
-                    <li>van Fraassen, B. C. (2008). <em>Scientific Representation: Paradoxes of Perspective</em>. Oxford University Press.</li>
-                    <li>Kuchař, K. V. (1992). Time and interpretations of quantum gravity. In <em>Proceedings of the 4th Canadian Conference on General Relativity and Relativistic Astrophysics</em>.</li>
-                    <li>Isham, C. J. (1993). Canonical quantum gravity and the problem of time. In <em>Integrable Systems, Quantum Groups, and Quantum Field Theories</em>.</li>
-                    <li>Wallace, D. (2012). <em>The Emergent Multiverse</em>. Oxford University Press.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
+            <h3>Contact</h3>
             <div class="contact-box">
                 <p><strong>Georgios Kouvidis</strong></p>
                 <p>Independent Researcher in Philosophy of Physics</p>
                 <p>Email: <a href="mailto:georgioskouvidis@gmail.com">georgioskouvidis@gmail.com</a></p>
                 <p>ORCID: <a href="https://orcid.org/0009-0004-8812-7838" target="_blank" rel="noopener noreferrer">0009-0004-8812-7838</a></p>
-                
                 <div class="contact-note">
                     <p>I welcome feedback, questions, and discussion about TRO, especially regarding formalization, constructive models, and foundational implications.</p>
                 </div>
@@ -408,16 +393,4 @@
     contents.forEach(content => content.classList.remove('active'));
 
     const buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(b => b.classList.remove('active'));
-
-    const target = document.getElementById(tabName);
-    if (target) target.classList.add('active');
-
-    if (btn) btn.classList.add('active');
-  }
-
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
-</body>
-</html>
+    buttons.forEach(b => b.classList.remove('activ
