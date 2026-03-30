@@ -1,4 +1,4 @@
-/* Temporal Rate Ontology Website Styles - Enhanced Version */
+/* Temporal Rate Ontology Website Styles - Integrated Version */
 
 :root {
     --primary-color: #1a5490;
@@ -17,6 +17,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -76,7 +80,9 @@ nav {
 nav .container {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 28px;
+    row-gap: 10px;
+    flex-wrap: wrap;
     padding: 15px 20px;
 }
 
@@ -105,6 +111,10 @@ main {
 
 section {
     margin-bottom: 80px;
+}
+
+main.container > section:first-child {
+    margin-top: 10px;
 }
 
 section h2 {
@@ -167,6 +177,66 @@ p {
     font-size: 0.85em;
     color: var(--primary-color);
     font-weight: 500;
+}
+
+/* Schematic Section */
+.schematic-section {
+    margin: 0 -20px 80px;
+    padding: 48px 20px 40px;
+    background: linear-gradient(180deg, #f0f6ff 0%, #ffffff 100%);
+    border-top: 3px solid var(--accent-color);
+    border-bottom: 1px solid rgba(26, 84, 144, 0.12);
+}
+
+.schematic-section h2 {
+    margin-bottom: 24px;
+}
+
+.schematic-frame {
+    width: 100%;
+    /* Stay within the text column — no wider than the container */
+    max-width: 100%;
+    margin: 20px auto 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(26, 84, 144, 0.14);
+    /* Lighter shadow — less contrast against white page */
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10);
+    background: #080c14;
+    /* aspect-ratio as the primary sizing mechanism */
+    aspect-ratio: 16 / 9;
+}
+
+.schematic-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    background: #080c14;
+}
+
+.schematic-note {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 0.95em;
+    color: var(--text-secondary);
+}
+
+.schematic-note a {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.schematic-note a::after {
+    content: ' →';
+}
+
+.schematic-note a:hover {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
 }
 
 /* Key Claims Grid */
@@ -241,25 +311,29 @@ p {
     margin: 20px 0;
 }
 
-.is-column, .is-not-column {
+.is-column,
+.is-not-column {
     background: var(--light-bg);
     padding: 20px;
     border-radius: 6px;
     border: 1px solid var(--border-color);
 }
 
-.is-column h4, .is-not-column h4 {
+.is-column h4,
+.is-not-column h4 {
     margin-top: 0;
     color: var(--primary-color);
     font-size: 1.1em;
 }
 
-.is-column ul, .is-not-column ul {
+.is-column ul,
+.is-not-column ul {
     margin: 15px 0 0 20px;
     padding: 0;
 }
 
-.is-column li, .is-not-column li {
+.is-column li,
+.is-not-column li {
     margin-bottom: 10px;
     line-height: 1.6;
 }
@@ -424,7 +498,8 @@ p {
     font-size: 1.1em;
 }
 
-.keywords, .citation {
+.keywords,
+.citation {
     font-size: 0.9em;
     line-height: 1.7;
     color: var(--text-secondary);
@@ -508,53 +583,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-    
-    .tagline {
-        font-size: 1em;
-    }
-    
-    nav .container {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    
-    section h2 {
-        font-size: 1.8em;
-    }
-    
-    .claim-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .two-col, .resources-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .paper-links {
-        flex-direction: column;
-    }
-    
-    .btn {
-        text-align: center;
-    }
-}
-
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Selection Styling */
-::selection {
-    background: var(--accent-color);
-    color: white;
-}
-
 /* Link Styling */
 main a {
     color: var(--primary-color);
@@ -577,7 +605,13 @@ em {
     font-style: italic;
 }
 
-/* Accessibility improvements */
+/* Selection Styling */
+::selection {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Accessibility */
 [role="article"]:focus,
 [role="navigation"]:focus {
     outline: 2px solid var(--primary-color);
@@ -589,52 +623,7 @@ a:focus {
     outline-offset: 2px;
 }
 
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-    
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-    
-    .claim-card:hover,
-    .paper:hover,
-    .btn:hover {
-        transform: none;
-    }
-}
-
-/* Print styles */
-@media print {
-    nav, footer, .btn {
-        display: none;
-    }
-    
-    body {
-        background: white;
-        color: black;
-    }
-    
-    a {
-        text-decoration: underline;
-        color: black;
-    }
-    
-    .paper, .faq-item {
-        page-break-inside: avoid;
-    }
-    
-    header {
-        background: none;
-        color: black;
-        border-bottom: 2px solid black;
-    }
-}
-/* Tab Styles for Why TRO Section */
+/* Why TRO Tabs */
 .audience-tabs {
     display: flex;
     gap: 10px;
@@ -664,15 +653,16 @@ a:focus {
 .tab-btn.active {
     color: var(--primary-color, #1a5490);
     border-bottom-color: var(--primary-color, #1a5490);
+    font-weight: 600;
 }
 
 .tab-content {
     display: none;
-    animation: fadeIn 0.3s ease-in;
 }
 
 .tab-content.active {
     display: block;
+    animation: fadeIn 0.3s ease-in;
 }
 
 @keyframes fadeIn {
@@ -686,39 +676,108 @@ a:focus {
     }
 }
 
-/* Responsive tabs for mobile */
+/* Responsive Design */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    nav .container {
+        gap: 20px;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    .claim-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .two-col,
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .paper-links {
+        flex-direction: column;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
     .audience-tabs {
         flex-direction: column;
     }
-    
+
     .tab-btn {
         width: 100%;
         text-align: left;
         border-bottom: 1px solid var(--border-color, #ddd);
     }
-    
+
     .tab-btn.active {
         border-left: 3px solid var(--primary-color, #1a5490);
         border-bottom: 1px solid var(--border-color, #ddd);
         background: rgba(26, 84, 144, 0.05);
     }
 }
-/* === TAB FUNCTIONALITY (REQUIRED) === */
 
-.tab-content {
-    display: none;
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .claim-card:hover,
+    .paper:hover,
+    .btn:hover {
+        transform: none;
+    }
 }
 
-.tab-content.active {
-    display: block;
+/* Print styles */
+@media print {
+    nav,
+    footer,
+    .btn,
+    .schematic-section {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    a {
+        text-decoration: underline;
+        color: black;
+    }
+
+    .paper,
+    .faq-item {
+        page-break-inside: avoid;
+    }
+
+    header {
+        background: none;
+        color: black;
+        border-bottom: 2px solid black;
+    }
 }
 
-.tab-btn {
-    cursor: pointer;
-}
-
-.tab-btn.active {
     font-weight: 600;
     border-bottom: 2px solid var(--primary-color);
 }
