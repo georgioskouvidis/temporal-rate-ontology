@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://georgioskouvidis.github.io/temporal-rate-ontology/sitemap.xml
